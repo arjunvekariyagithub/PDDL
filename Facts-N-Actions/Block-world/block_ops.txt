@@ -1,0 +1,28 @@
+
+(operator
+ move
+ (params
+  (<b> Object) (<x> Object) (<y> Object))
+ (preconds
+  (on <b> <x>) (clear <b>) (clear <y>))
+ (effects
+  (on <b> <y>) (clear <x>) (del on <b> <x>) (del clear <y>)))
+
+(operator
+ movetotable
+ (params
+  (<b> Object) (<x> Object))
+ (preconds
+  (on <b> <x>) (clear <b>))
+ (effects
+  (on <b> Table) (clear <x>) (del on <b> <x>)))
+
+(operator
+ movefromtable
+ (params
+  (<b> Object) (<x> Object))
+ (preconds
+  (on <b> Table) (clear <b>) (clear <x>))
+ (effects
+  (on <b> <x>) (del clear <x>) (del on <b> Table)))
+

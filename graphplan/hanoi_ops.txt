@@ -1,0 +1,10 @@
+
+(operator
+ move
+(params
+  (<d> Object) (<from> Object) (<to> Object))
+(preconds
+  (smaller <d> <to>) (on <d> <from>) (clear <d>) (clear <to>))
+(effects
+  (del on <d> <from>) (clear <from>) (on <d> <to>) (del clear <to>))
+)

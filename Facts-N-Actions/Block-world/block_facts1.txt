@@ -1,0 +1,12 @@
+(A Object)
+(B Object)
+(C Object)
+(D Object)
+(E Object)
+(Table Object)
+
+(preconds
+ (on A Table) (on B Table) (on C Table) (clear A) (clear B) (clear C))
+
+(effects
+ (on A B) (on B C) (clear A) (on C Table))

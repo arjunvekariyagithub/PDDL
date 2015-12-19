@@ -1,0 +1,20 @@
+; This facts are based on 8-puzzle probrlm. 
+; Description about predicated are given in ReadMe.txt file.
+
+(tile t1) 
+(tile t2) 
+(tile t3) 
+(tile t4) 
+(tile t5) 
+(tile t6) 
+(tile t7)
+(tile t8)
+
+(validLocation l1) 
+(validLocation l2) 
+(validLocation l3)
+
+(incBy1 l1 l2) 
+(incBy1 l2 l3)
+(decBy1 l3 l2) 
+(decBy1 l2 l1)

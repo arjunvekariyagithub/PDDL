@@ -1,0 +1,44 @@
+
+(operator
+ move-left
+(params
+  (<t> Tile) (<fromX> Location) (<fromY> Location) (<toX> Location))
+(preconds
+  (tile <t>) (validLocation <fromX>) (validLocation <fromY>) (validLocation <toX>)
+  (decBy1 <toX> <fromX>) (empty <toX> <fromY>) (tileAt <t> <fromX> <fromY>))
+(effect
+  (tileAt <t> <toX> <fromY>) (del empty <toX> <fromY>) (del tileAt <t> <fromX> <fromY>) (empty <fromX> <fromY>))
+)
+
+(operator
+ move-right
+(params
+  (<t> Tile) (<fromX> Location) (<fromY> Location) (<toX> Location))
+(preconds
+  (tile <t>) (validLocation <fromX>) (validLocation <fromY>) (validLocation <toX>)
+  (incBy1 <toX> <fromX>) (empty <toX> <fromY>) (tileAt <t> <fromX> <fromY>))
+(effect
+  (tileAt <t> <toX> <fromY>) (del empty <toX> <fromY>) (del tileAt <t> <fromX> <fromY>) (empty <fromX> <fromY>))
+)
+
+(operator
+ move-up
+(params
+  (<t> Tile) (<fromX> Location) (<fromY> Location) (<toY> Location))
+(preconds
+  (tile <t>) (validLocation <fromX>) (validLocation <fromY>) (validLocation <toY>)
+  (decBy1 <toY> <fromY>) (empty <fromX> <toY>) (tileAt <t> <fromX> <fromY>))
+(effect
+  (tileAt <t> <fromX> <toY>) (del empty <fromX> <toY>) (del tileAt <t> <fromX> <fromY>) (empty <fromX> <fromY>))
+)
+
+(operator
+ move-down
+(params
+  (<t> Tile) (<fromX> Location) (<fromY> Location) (<toY> Location))
+(preconds
+  (tile <t>) (validLocation <fromX>) (validLocation <fromY>) (validLocation <toY>)
+  (incBy1 <toY> <fromY>) (empty <fromX> <toY>) (tileAt <t> <fromX> <fromY>))
+(effect
+  (tileAt <t> <fromX> <toY>) (del empty <fromX> <toY>) (del tileAt <t> <fromX> <fromY>) (empty <fromX> <fromY>))
+)
